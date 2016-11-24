@@ -24,12 +24,16 @@ function LunchCheckController($scope) {
     $scope.outputMessage = ourMessage;
   };
 
+  function filterNull(value){
+    return value != " ";
+  }
+
   function calculateItems(string) {
     var totalStrings  = 0;
     if (string=="") {
 
     } else {
-      totalStrings =string.split(",").length;
+      totalStrings =string.replace(/\s+/g,' ').split(",").filter(filterNull).filter(function(e){return e}).length;
     }
     return totalStrings ;
   };
