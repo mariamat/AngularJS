@@ -1,0 +1,9 @@
+<div class="col-md-12">
+  <a ui-sref="home">Home</a>
+  <h2>Menu categories</h2>
+  <ul>
+    <li ng-repeat="item in $ctrl.items">
+      <a ui-sref="items({category: item.short_name})">{{item.name}}</a>
+    </li>
+  </ul>
+</div>
